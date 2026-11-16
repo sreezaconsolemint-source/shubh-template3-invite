@@ -34,7 +34,7 @@ window.JFY_DATA = {
   postcard_to2: "& friends,",
   postcard_to3: "with all our love",
   music_url: "assets/music.mp3",
-  music_credit: "\u201cAir Prelude\u201d \u2014 Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  music_credit: "",
   blessings: [
     { role: "Grand Parents", names: "Smt. Leela Shah & Shri Mohan Shah" },
     { role: "Bhabhi & Brother", names: "Nisha Shah & Kunal Shah" },
