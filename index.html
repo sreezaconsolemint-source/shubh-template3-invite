@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" class="is-locked">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6e1f2f">
+<link rel="icon" href="assets/img/seal.webp">
+<title>{{groom_name}} &amp; {{bride_name}} — Wedding Invitation</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-locked">
+<div class="page">
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+      <path d="M0.50 0.889 C0.256 0.692, 0.05 0.475, 0.05 0.282 C0.05 0.136, 0.156 0.05, 0.29 0.05 C0.378 0.05, 0.454 0.10, 0.50 0.172 C0.546 0.10, 0.622 0.05, 0.71 0.05 C0.844 0.05, 0.95 0.136, 0.95 0.282 C0.95 0.475, 0.744 0.692, 0.50 0.889 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<div id="preloader">
+  <img class="preloader__logo" src="assets/img/seal.webp" alt="" width="100" height="100">
+  <p class="preloader__text">A Beautiful Love Story Awaits</p>
+  <div class="preloader__bar"></div>
+</div>
+
+<audio id="music" src="assets/music.mp3" preload="none" loop></audio>
+<button class="music" type="button" id="musicBtn" aria-label="Toggle music">
+  <img class="music__record" src="assets/img/record.webp" alt="" width="74" height="74">
+</button>
+
+<main>
+<section class="hero" id="hero">
+  <img class="hero__bg" id="hero-gates" src="assets/img/hero_gates.webp" alt="">
+  <img class="hero__bg2" id="hero-palace" src="assets/img/hero_palace.webp" alt="">
+  <div class="hero__cover" id="hero-cover">
+    <div class="hero__tap">
+      <span class="hero__tap-text">Tap to Begin</span>
+      <img class="hero__tap-logo" src="assets/img/seal.webp" alt="" width="140" height="140">
+    </div>
+  </div>
+  <button class="hero__skip" id="hero-skip" type="button" hidden>Skip ›</button>
+  <div class="hero__names" id="hero-names">
+    <h2 class="hero__name" data-fit="22">{{groom_name}}</h2>
+    <span class="hero__weds">Weds</span>
+    <h2 class="hero__name" data-fit="22">{{bride_name}}</h2>
+  </div>
+  <div class="hero__scroll" id="hero-scroll">
+    <div class="hero__scroll-inner">
+      <span class="hero__scroll-text">Scroll Down</span>
+      <span class="hero__scroll-arrow">↓</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="invite">
+  <div class="card invite__card">
+    <div class="invite__onkar">ॐ</div>
+    <p class="invite__shabad" data-optional="blessing_line">{{blessing_line}}</p>
+    <h2 class="invite__heading">{{invite_kicker}}</h2>
+    <p class="invite__lead">{{invite_lead}}</p>
+    <div>
+      <h1 class="invite__name" data-fit="26">{{groom_name}}</h1>
+      <p class="invite__relation">Son of</p>
+      <p class="invite__parents" data-optional="groom_parents">{{groom_parents}}</p>
+    </div>
+    <div class="invite__with">With</div>
+    <div>
+      <h1 class="invite__name" data-fit="26">{{bride_name}}</h1>
+      <p class="invite__relation">Daughter of</p>
+      <p class="invite__parents" data-optional="bride_parents">{{bride_parents}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section scratch" id="scratch">
+  <div class="scratch__head">
+    <h4 class="scratch__eyebrow">A Special Surprise</h4>
+    <h2 class="scratch__title">Scratch the heart to reveal our wedding date</h2>
+  </div>
+  <div class="scratch__stage">
+    <div class="scratch__card">
+      <svg class="scratch__heart-bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="clip-path:none;position:absolute;inset:0;width:100%;height:100%">
+        <path d="M 50 88.9 C 25.6 69.2, 5 47.5, 5 28.2 C 5 13.6, 15.6 5, 29 5 C 37.8 5, 45.4 10, 50 17.2 C 54.6 10, 62.2 5, 71 5 C 84.4 5, 95 13.6, 95 28.2 C 95 47.5, 74.4 69.2, 50 88.9 Z" fill="#ffffff"/>
+      </svg>
+      <p class="scratch__date" id="scratch-date"></p>
+      <div class="scratch__foil-wrap" style="clip-path:url(#heartClip)">
+        <canvas class="scratch__foil" id="scratch-foil"></canvas>
+      </div>
+      <svg class="scratch__heart-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="clip-path:none;pointer-events:none;position:absolute;inset:0;width:100%;height:100%">
+        <path d="M 50 88.9 C 25.6 69.2, 5 47.5, 5 28.2 C 5 13.6, 15.6 5, 29 5 C 37.8 5, 45.4 10, 50 17.2 C 54.6 10, 62.2 5, 71 5 C 84.4 5, 95 13.6, 95 28.2 C 95 47.5, 74.4 69.2, 50 88.9 Z" fill="none" stroke="#c9a227" stroke-width="1.6"/>
+      </svg>
+      <div class="scratch__confetti" id="scratch-confetti"></div>
+    </div>
+    <div class="scratch__hint" id="scratch-hint">
+      <p class="scratch__hint-text">Scratch to reveal!</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="countdown">
+  <h2 class="section__title">The Big Day Approaches</h2>
+  <div class="countdown__row">
+    <div class="countdown__box"><span class="countdown__n" id="cdD">00</span><span class="countdown__label">Days</span></div>
+    <div class="countdown__box"><span class="countdown__n" id="cdH">00</span><span class="countdown__label">Hours</span></div>
+    <div class="countdown__box"><span class="countdown__n" id="cdM">00</span><span class="countdown__label">Minutes</span></div>
+    <div class="countdown__box"><span class="countdown__n" id="cdS">00</span><span class="countdown__label">Seconds</span></div>
+  </div>
+</section>
+
+<section class="section" id="story" data-optional="story_p1,story_p2,story_p3">
+  <h2 class="section__title">{{story_title}}</h2>
+  <div class="story__col">
+    <div class="story__carousel" id="carousel"></div>
+    <div class="story__dots" id="carDots"></div>
+    <div class="story__text">
+      <p data-optional="story_p1">{{story_p1}}</p>
+      <p data-optional="story_p2">{{story_p2}}</p>
+      <p data-optional="story_p3">{{story_p3}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section events" id="events">
+  <h2 class="section__title">Wedding Events</h2>
+  <div id="eventList"></div>
+  <div class="journey" id="journey">
+    <div class="journey__stop">
+      <img src="assets/img/city_amd.webp" alt="">
+      <p class="journey__place">{{from_city}}</p>
+    </div>
+    <div class="journey__track" id="journey-track">
+      <div class="journey__line"></div>
+      <div class="journey__plane" id="journey-plane">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+      </div>
+    </div>
+    <div class="journey__stop">
+      <img src="assets/img/city_udr.webp" alt="">
+      <p class="journey__place">{{to_city}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bless" id="blessings">
+  <h2 class="section__title">With Blessings From</h2>
+  <div class="card" id="blessList"></div>
+</section>
+
+<section class="section rsvp" id="rsvp">
+  <h2 class="section__title">{{rsvp_title}}</h2>
+  <p class="rsvp__lead">{{rsvp_lead}}</p>
+  <div class="pass">
+    <div class="pass__head">
+      <div class="pass__kicker">The Wedding Express</div>
+      <div class="pass__title">Boarding Pass</div>
+    </div>
+    <div class="pass__route">
+      <div class="pass__air">
+        <div class="pass__code">{{from_code}}</div>
+        <div class="pass__city">{{from_region}}</div>
+        <div class="pass__when">{{from_date_short}}</div>
+      </div>
+      <div class="pass__plane" aria-hidden="true">✈</div>
+      <div class="pass__air">
+        <div class="pass__code">{{to_code}}</div>
+        <div class="pass__city">{{to_region}}</div>
+        <div class="pass__when">{{to_date_short}}</div>
+      </div>
+    </div>
+    <form class="pass__form" id="rsvpForm">
+      <label>Your name<input type="text" name="name" required maxlength="80"></label>
+      <label>Phone number<input type="tel" name="phone" maxlength="16"></label>
+      <div>
+        <p style="font-family:var(--font-heading);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.4rem">Will you attend?</p>
+        <div class="choices">
+          <div class="choice is-on" data-v="yes">Joyfully yes</div>
+          <div class="choice" data-v="no">Regretfully no</div>
+        </div>
+        <input type="hidden" name="attending" value="yes">
+      </div>
+      <div id="qGuests">
+        <p style="font-family:var(--font-heading);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.4rem">Number of guests</p>
+        <div class="counter">
+          <button type="button" id="gMinus">−</button>
+          <output id="gCount">1</output>
+          <button type="button" id="gPlus">+</button>
+        </div>
+      </div>
+      <label>A message for the couple<textarea name="note" rows="3" maxlength="400"></textarea></label>
+      <p id="rErr" hidden style="color:#8a3a3a;font-size:.95rem">Please add your name to the pass.</p>
+      <button type="submit" class="btn-send">Send RSVP</button>
+    </form>
+    <div id="thanks">
+      <h3>Confirmed</h3>
+      <p id="thanksMsg"></p>
+      <a class="btn-send" id="waBtn" hidden target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Send on WhatsApp</a>
+      <button type="button" class="btn-send" id="editRsvp" style="background:transparent;color:var(--maroon);border:1px solid var(--maroon);margin-top:10px">Send another response</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="postcard">
+    <div class="postcard__paper">
+      <div class="postcard__message">
+        <p class="postcard__thanks">Thank You</p>
+        <p class="postcard__text">{{thanks_text}}</p>
+        <p class="postcard__sign">With love,<span>{{groom_name}} &amp; {{bride_name}}</span></p>
+      </div>
+      <div class="postcard__address">
+        <div class="postcard__marks">
+          <div class="postcard__postmark">
+            <span>{{to_city}}</span>
+            <strong id="postDate"></strong>
+            <span>India</span>
+          </div>
+          <div class="postcard__stamp"><img src="assets/img/seal.webp" alt=""></div>
+        </div>
+        <p class="postcard__to">To</p>
+        <ul class="postcard__lines">
+          <li>{{postcard_to1}}</li>
+          <li>{{postcard_to2}}</li>
+          <li>{{postcard_to3}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="footer__credit">An original invitation by Just For You.<br><span data-optional="music_credit">{{music_credit}}</span></p>
+</footer>
+
+</div>
+<script src="assets/sample-data.js"></script>
+<script src="assets/jfy-codec.js"></script>
+<script src="assets/data-loader.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
